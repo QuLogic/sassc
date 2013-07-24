@@ -43,9 +43,9 @@ if [ ${#errors[*]} -gt 0 ]; then
   i=0
   while [ $i -lt ${#errors[*]} ]; do
     echo -e "\n----- ERRORS ------\n"
-    echo -e "$errors[$i]"
+    echo -e "${errors[$i]}"
     echo -e "\n-----  DIFF  ------\n"
-    echo -e "$diffs[$i]"
+    echo -e "${diffs[$i]}"
     ((i++))
   done
   echo
