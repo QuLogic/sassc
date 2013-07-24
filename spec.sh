@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BASE=$(dirname $0)
+
 searchpath=${1:-.}
 
 errors=()
@@ -17,7 +19,7 @@ for input_file in `find $searchpath -name 'input.*'`; do
     expected_file="$spec_dir/expected_output.css"
     error_file="$spec_dir/sassc_errors.txt"
 
-    ./bin/sassc ${input_file} > ${sassc_file} 2> $error_file
+    $BASE/bin/sassc ${input_file} > ${sassc_file} 2> $error_file
 
     sassc_output=`cat $sassc_file`
     expected_output=`cat $expected_file`
