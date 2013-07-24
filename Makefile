@@ -20,10 +20,10 @@ libsass:
 	$(CC) -c $(CFLAGS) $< -o $@
 
 test: all
-	ruby spec.rb spec/basic/
+	./spec.sh spec/basic/
 
 test_all: all
-	ruby spec.rb spec/
+	./spec.sh spec/
 
 test_flags: all
 	$(TARGET) -t compressed -o $@.css -I spec/getopt/inc spec/getopt/input.scss
